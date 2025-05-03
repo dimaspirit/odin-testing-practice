@@ -1,5 +1,15 @@
-import { sum } from "./helpers";
+import { capitalize } from "./helpers";
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+describe('Capitalize ', () => {
+  test('should work correct', () => {
+    expect(capitalize('welcome')).toBe('Welcome');
+  });
+  
+  test('return error when value has invalid type', () => {
+    expect(() => capitalize(true)).toThrow(/string/);
+  });
+  
+  test('return error when value is empty', () => {
+    expect(() => capitalize('   ')).toThrow(/empty/);
+  });
+})
